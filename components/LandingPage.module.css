@@ -1,0 +1,277 @@
+/* 토스 스타일 모바일 랜딩페이지 */
+
+.container {
+  min-height: 100vh;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: var(--white);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 헤더 스타일 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  color: var(--gray-700);
+  transition: background-color 0.2s ease;
+}
+
+.backButton:active {
+  background-color: var(--gray-100);
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.logoText {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray-900);
+  letter-spacing: -0.02em;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  color: var(--gray-600);
+  transition: background-color 0.2s ease;
+}
+
+.iconButton:active {
+  background-color: var(--gray-100);
+}
+
+/* 메인 컨텐츠 */
+.main {
+  padding: 32px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* 타이틀 섹션 */
+.titleSection {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mainTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--gray-900);
+  letter-spacing: -0.03em;
+}
+
+.titleLine1,
+.titleLine2 {
+  display: block;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--gray-600);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+/* 그래픽 섹션 */
+.graphicSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.houseContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+}
+
+.diamond {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  z-index: 10;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateX(-50%) translateY(-20px);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-30px);
+  }
+}
+
+.house {
+  position: relative;
+  z-index: 1;
+}
+
+/* 기능 리스트 */
+.featuresSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 8px;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  background-color: var(--gray-50);
+  border-radius: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature:active {
+  transform: scale(0.98);
+}
+
+.featureIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.featureText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.featureTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gray-900);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.featureDescription {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gray-600);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+/* CTA 섹션 */
+.ctaSection {
+  padding: 0 8px;
+  margin-top: auto;
+}
+
+.startButton {
+  width: 100%;
+  height: 56px;
+  background: linear-gradient(135deg, var(--toss-blue-600) 0%, var(--toss-blue-500) 100%);
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+  transition: all 0.2s ease;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.startButton:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
+}
+
+/* 반응형 디자인 */
+@media (min-width: 768px) {
+  .container {
+    max-width: 420px;
+    margin: 0 auto;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+  }
+
+  .main {
+    padding: 40px 24px 48px;
+    gap: 56px;
+  }
+
+  .mainTitle {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 17px;
+  }
+}
+
+/* 다크모드 대응 (선택사항) */
+@media (prefers-color-scheme: dark) {
+  /* 필요시 다크모드 스타일 추가 */
+}

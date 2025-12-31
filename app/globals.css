@@ -1,0 +1,105 @@
+/* 토스 스타일 디자인 시스템 */
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* 토스 컬러 팔레트 */
+  --toss-blue-50: #f0f4ff;
+  --toss-blue-100: #e0e9ff;
+  --toss-blue-200: #c7d7fe;
+  --toss-blue-300: #a5b8fc;
+  --toss-blue-400: #8b95f8;
+  --toss-blue-500: #6b6ff2;
+  --toss-blue-600: #4f46e5;
+  --toss-blue-700: #4338ca;
+  --toss-blue-800: #3730a3;
+  --toss-blue-900: #312e81;
+
+  /* 그레이 스케일 */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* 기본 색상 */
+  --white: #ffffff;
+  --black: #000000;
+
+  /* 타이포그래피 */
+  --font-pretendard: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-pretendard);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--gray-900);
+  background-color: var(--white);
+  overflow-x: hidden;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* 스크롤바 스타일링 (토스 스타일) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-400);
+}
+
+/* 버튼 리셋 */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+/* 링크 리셋 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 이미지 최적화 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
