@@ -1,4 +1,6 @@
 // Vercel Postgres + Prisma 사용
+// lib/db.ts 파일을 이 파일로 교체하세요
+
 import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()

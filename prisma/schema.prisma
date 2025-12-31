@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_URL")
+}
+
+model Inquiry {
+  id           String   @id @default(cuid())
+  name         String
+  phone        String
+  buildingType String   @map("building_type")
+  address      String
+  area         String?
+  areaUnit     String   @default("pyeong") @map("area_unit")
+  status       String   @default("pending")
+  notes        String?
+  createdAt    DateTime @default(now()) @map("created_at")
+  
+  @@map("inquiries")
+}
+
+model Stats {
+  id                        String   @id @default(cuid())
+  totalInquiries            Int      @default(0) @map("total_inquiries")
+  totalCalculations         Int      @default(0) @map("total_calculations")
+  inquiriesByBuildingType   Json?    @map("inquiries_by_building_type")
+  inquiriesByDate            Json?    @map("inquiries_by_date")
+  updatedAt                 DateTime @default(now()) @updatedAt @map("updated_at")
+  
+  @@map("stats")
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now()) @map("created_at")
+  
+  @@map("admin")
+}
