@@ -240,9 +240,7 @@ export default function DetailPage() {
             />
           </div>
           <div className={styles.heroEmoji}>
-            <div className={`${styles.heroEmojiSize} ${styles.floatAnimation}`}>
-              <EmojiSVG emoji="house" size={100} />
-            </div>
+            <div className={`${styles.clayEmoji} ${styles.heroEmojiSize} ${styles.floatAnimation}`}>🏠</div>
           </div>
           <h1 className={styles.heroTitle}>
             <span className={styles.heroLine1}>지붕이 돈을 버는 공간이</span>
