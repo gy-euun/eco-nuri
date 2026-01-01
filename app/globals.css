@@ -38,7 +38,10 @@
   --black: #000000;
 
   /* 타이포그래피 */
-  --font-pretendard: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  --font-pretendard: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  
+  /* 이모지 폰트 (모바일 호환성) */
+  --font-emoji: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', 'Android Emoji', 'EmojiSymbols', 'EmojiOne Mozilla', 'Twemoji Mozilla', 'Segoe UI', sans-serif;
 }
 
 html {
@@ -54,6 +57,27 @@ body {
   color: var(--gray-900);
   background-color: var(--white);
   overflow-x: hidden;
+  /* 이모지 렌더링 최적화 */
+  -webkit-font-feature-settings: "liga" off;
+  font-feature-settings: "liga" off;
+  text-rendering: optimizeLegibility;
+}
+
+/* 이모지 스타일 통일 */
+.emoji, 
+[class*="emoji"],
+[class*="Emoji"] {
+  font-family: var(--font-emoji);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* 이모지 크기 고정 */
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* 모바일 최적화 */
