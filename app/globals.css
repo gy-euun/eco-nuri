@@ -63,19 +63,34 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* 이모지 스타일 통일 */
+/* 이모지 스타일 통일 - 모든 플랫폼에서 동일하게 표시 */
 .emoji, 
 [class*="emoji"],
-[class*="Emoji"] {
-  font-family: var(--font-emoji);
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  line-height: 1;
-  text-rendering: auto;
+[class*="Emoji"],
+.clayEmoji {
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', 'Android Emoji', 'EmojiSymbols', 'EmojiOne Mozilla', 'Twemoji Mozilla', 'Segoe UI', sans-serif !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  font-weight: normal !important;
+  line-height: 1 !important;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* 이모지 크기 고정 */
+  display: inline-block;
+  vertical-align: middle;
+  /* 이모지가 깨지지 않도록 */
+  unicode-bidi: bidi-override;
+  direction: ltr;
+}
+
+/* 플로팅 CTA 아이콘도 동일하게 */
+.floatingCTAIcon {
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', 'Android Emoji', 'EmojiSymbols', 'EmojiOne Mozilla', 'Twemoji Mozilla', 'Segoe UI', sans-serif !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  font-weight: normal !important;
+  line-height: 1 !important;
   display: inline-block;
   vertical-align: middle;
 }
