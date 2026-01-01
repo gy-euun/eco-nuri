@@ -2264,6 +2264,9 @@
   border: 2px solid rgba(255, 255, 255, 0.6);
   position: relative;
   overflow: hidden;
+  font-size: 64px;
+  line-height: 1;
+  text-align: center;
 }
 
 /* SVG 이모지 컨테이너 */
@@ -2285,24 +2288,30 @@
 }
 
 .heroEmojiSize {
-  font-size: 100px;
+  font-size: 80px;
   width: 150px;
   height: 150px;
   border-radius: 40px;
-  /* 모바일에서 이모지 크기 조정 */
+  line-height: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
   .heroEmojiSize {
-    font-size: 80px;
+    font-size: 64px;
     width: 120px;
     height: 120px;
+    border-radius: 30px;
   }
   
   .clayEmoji {
-    font-size: 64px;
+    font-size: 56px;
     width: 100px;
     height: 100px;
+    border-radius: 24px;
   }
 }
 
