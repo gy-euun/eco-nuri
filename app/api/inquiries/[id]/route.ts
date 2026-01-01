@@ -16,7 +16,7 @@ export async function GET(
       )
     }
 
-    const inquiry = getInquiryById(params.id)
+    const inquiry = await getInquiryById(params.id)
     if (!inquiry) {
       return NextResponse.json(
         { error: '문의 내역을 찾을 수 없습니다.' },
@@ -49,7 +49,7 @@ export async function PATCH(
     }
 
     const body = await request.json()
-    const inquiry = updateInquiry(params.id, body)
+    const inquiry = await updateInquiry(params.id, body)
     
     if (!inquiry) {
       return NextResponse.json(
@@ -82,7 +82,7 @@ export async function DELETE(
       )
     }
 
-    const success = deleteInquiry(params.id)
+    const success = await deleteInquiry(params.id)
     if (!success) {
       return NextResponse.json(
         { error: '문의 내역을 찾을 수 없습니다.' },
