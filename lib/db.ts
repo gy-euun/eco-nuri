@@ -45,7 +45,8 @@ export const saveInquiry = async (
       address: inquiry.address,
       area: inquiry.area || null,
       area_unit: inquiry.areaUnit,
-      status: 'pending'
+      status: 'pending',
+      notes: inquiry.notes || null
     }])
     .select()
     .single()

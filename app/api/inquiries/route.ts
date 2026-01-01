@@ -16,13 +16,14 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const inquiry = saveInquiry({
+    const inquiry = await saveInquiry({
       name,
       phone,
       buildingType,
       address,
       area: area || '',
-      areaUnit: areaUnit || 'pyeong'
+      areaUnit: areaUnit || 'pyeong',
+      notes: null
     })
 
     return NextResponse.json({ success: true, inquiry }, { status: 201 })
