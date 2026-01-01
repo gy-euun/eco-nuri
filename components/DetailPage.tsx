@@ -1375,14 +1375,30 @@ export default function DetailPage() {
               </div>
 
               <div className={styles.formGroup}>
-                <label className={styles.formLabel}>주소 <span className={styles.required}>*</span></label>
-                <input
-                  type="text"
-                  className={styles.formInput}
-                  required
-                  placeholder="건물 주소를 입력해주세요"
+                <label className={styles.formLabel}>
+                  건물 주소 <span className={styles.required}>[필수]</span>
+                </label>
+                <p className={styles.formHelperText}>
+                  정확한 주소를 검색해주세요. 항공뷰로 대략적인 설치 가능 용량을 확인할 수 있습니다.
+                </p>
+                <AddressSearch
                   value={inquiryForm.address}
-                  onChange={(e) => setInquiryForm({ ...inquiryForm, address: e.target.value })}
+                  onChange={(address, lat, lng) => {
+                    setInquiryForm({
+                      ...inquiryForm,
+                      address,
+                      lat,
+                      lng
+                    })
+                    // 면적이 입력되어 있으면 용량 재계산
+                    if (inquiryForm.area) {
+                      const pyeong = inquiryForm.areaUnit === 'sqm' 
+                        ? parseFloat(inquiryForm.area) / 3.3058 
+                        : parseFloat(inquiryForm.area)
+                      const capacity = pyeong / 1.5
+                      setEstimatedCapacity(capacity)
+                    }
+                  }}
                 />
               </div>
 
