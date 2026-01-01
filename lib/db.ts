@@ -34,7 +34,7 @@ export interface Stats {
 
 // 문의 내역 저장
 export const saveInquiry = async (
-  inquiry: Omit<Inquiry, 'id' | 'createdAt' | 'status'>
+  inquiry: Omit<Inquiry, 'id' | 'createdAt' | 'status' | 'notes'> & { notes?: string | null }
 ): Promise<Inquiry> => {
   const { data, error } = await supabase
     .from('inquiries')
