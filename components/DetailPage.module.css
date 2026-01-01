@@ -1933,6 +1933,14 @@
   letter-spacing: -0.01em;
 }
 
+.formHelperText {
+  font-size: 13px;
+  color: var(--gray-600);
+  margin-bottom: 12px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
 .required {
   color: var(--toss-blue-600);
 }
