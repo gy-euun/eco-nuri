@@ -1155,6 +1155,36 @@ export default function DetailPage() {
             </div>
           </div>
 
+          <div className={styles.proposalImageWrapper}>
+            <div className={styles.proposalImageContainer}>
+              <Image
+                src="/제안서 이유.png"
+                alt="항공뷰 기반 태양광 패널 배치 설계 예시"
+                width={800}
+                height={600}
+                className={styles.proposalImage}
+                priority={false}
+              />
+              <div className={styles.proposalImageCaption}>
+                <p className={styles.proposalImageTitle}>실제 항공뷰 분석 사례</p>
+                <p className={styles.proposalImageDescription}>
+                  위성 이미지를 통해 지붕 구조를 분석하고,<br />
+                  최적의 패널 배치를 설계하여 설치 가능 용량을 계산합니다.
+                </p>
+                <div className={styles.proposalImageStats}>
+                  <div className={styles.proposalImageStat}>
+                    <span className={styles.proposalImageStatLabel}>모듈 수량</span>
+                    <span className={styles.proposalImageStatValue}>125EA</span>
+                  </div>
+                  <div className={styles.proposalImageStat}>
+                    <span className={styles.proposalImageStatLabel}>발전 용량</span>
+                    <span className={styles.proposalImageStatValue}>80kW</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className={styles.proposalInfoBox}>
             <h3 className={styles.proposalInfoTitle}>제안서에 포함되는 내용</h3>
             <ul className={styles.proposalInfoList}>
