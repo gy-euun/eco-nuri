@@ -1355,6 +1355,138 @@
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
 
+/* 제안서 프로세스 스타일 */
+.proposalProcess {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.proposalStep {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 24px;
+  background-color: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 2px solid var(--gray-100);
+}
+
+.proposalStepNumber {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--toss-blue-600) 0%, var(--toss-blue-500) 100%);
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 12px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.proposalStepContent {
+  flex: 1;
+}
+
+.proposalStepTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.proposalStepDescription {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--gray-600);
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+.proposalStepArrow {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--toss-blue-600);
+  text-align: center;
+  margin: -8px 0;
+  opacity: 0.6;
+}
+
+.proposalInfoBox {
+  background-color: var(--toss-blue-50);
+  padding: 32px 24px;
+  border-radius: 16px;
+  margin-top: 40px;
+  border: 2px solid var(--toss-blue-100);
+}
+
+.proposalInfoTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.proposalInfoList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.proposalInfoList li {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-700);
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  padding-left: 8px;
+}
+
+.proposalInfoNote {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gray-600);
+  line-height: 1.6;
+  padding: 16px;
+  background-color: var(--white);
+  border-radius: 12px;
+  border-left: 4px solid var(--toss-blue-600);
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 768px) {
+  .proposalStep {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .proposalStepNumber {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .proposalStepArrow {
+    transform: rotate(90deg);
+    margin: 0;
+  }
+
+  .proposalInfoBox {
+    padding: 24px 20px;
+  }
+}
+
 .finalCTAHighlight {
   display: flex;
   flex-direction: column;
