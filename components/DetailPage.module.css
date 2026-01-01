@@ -1464,6 +1464,73 @@
   letter-spacing: -0.01em;
 }
 
+.proposalImageWrapper {
+  margin: 40px 0;
+}
+
+.proposalImageContainer {
+  background-color: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border: 2px solid var(--gray-100);
+}
+
+.proposalImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.proposalImageCaption {
+  padding: 24px;
+  background-color: var(--gray-50);
+}
+
+.proposalImageTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.proposalImageDescription {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gray-600);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.proposalImageStats {
+  display: flex;
+  gap: 24px;
+  padding-top: 20px;
+  border-top: 2px solid var(--gray-200);
+}
+
+.proposalImageStat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.proposalImageStatLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-600);
+  letter-spacing: -0.01em;
+}
+
+.proposalImageStatValue {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--toss-blue-600);
+  letter-spacing: -0.02em;
+}
+
 @media (max-width: 768px) {
   .proposalStep {
     flex-direction: column;
@@ -1484,6 +1551,15 @@
 
   .proposalInfoBox {
     padding: 24px 20px;
+  }
+
+  .proposalImageCaption {
+    padding: 20px;
+  }
+
+  .proposalImageStats {
+    flex-direction: column;
+    gap: 16px;
   }
 }
 
