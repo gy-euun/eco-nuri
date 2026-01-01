@@ -2247,14 +2247,27 @@
 
   .calculatorInputGroup {
     flex-direction: column;
+    gap: 16px;
+  }
+
+  .calculatorInputField {
+    height: 64px !important;
+    font-size: 20px !important;
+    padding: 0 24px !important;
+    min-height: 64px;
+    width: 100%;
   }
 
   .calculatorUnitToggle {
     width: 100%;
+    margin-top: 0;
   }
 
   .unitButton {
     flex: 1;
+    padding: 16px 24px !important;
+    font-size: 18px !important;
+    min-height: 56px;
   }
 
   .caseGrid {
