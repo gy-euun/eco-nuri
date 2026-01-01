@@ -45,10 +45,22 @@ export default function EmojiSVG({ emoji, size = 80, className = '' }: EmojiSVGP
       style={{
         width: `${size}px`,
         height: `${size}px`,
+        minWidth: `${size}px`,
+        minHeight: `${size}px`,
       }}
-      dangerouslySetInnerHTML={{ __html: svgContent }}
-      role="img"
-      aria-label={emojiChar}
-    />
+    >
+      <div
+        dangerouslySetInnerHTML={{ __html: svgContent }}
+        style={{
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+        role="img"
+        aria-label={emojiChar}
+      />
+    </div>
   )
 }

@@ -242,6 +242,7 @@ export default function DetailPage() {
               height={40}
               priority
               className={styles.logoImage}
+              style={{ width: 'auto', height: 'auto' }}
             />
           </div>
           <div className={styles.heroEmoji}>
