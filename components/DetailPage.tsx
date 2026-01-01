@@ -18,8 +18,11 @@ export default function DetailPage() {
     buildingType: '',
     address: '',
     area: '',
-    areaUnit: 'pyeong'
+    areaUnit: 'pyeong' as 'pyeong' | 'sqm',
+    lat: undefined as number | undefined,
+    lng: undefined as number | undefined
   })
+  const [estimatedCapacity, setEstimatedCapacity] = useState<number | null>(null)
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0)
   const [scrollProgress, setScrollProgress] = useState(0)
   const [showFloatingCTA, setShowFloatingCTA] = useState(false)
@@ -137,13 +140,27 @@ export default function DetailPage() {
 
   const handleInquirySubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    if (!inquiryForm.address) {
+      alert('주소를 검색하여 선택해주세요.')
+      return
+    }
+    
     try {
       const response = await fetch('/api/inquiries', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(inquiryForm),
+        body: JSON.stringify({
+          name: inquiryForm.name,
+          phone: inquiryForm.phone,
+          buildingType: inquiryForm.buildingType,
+          address: inquiryForm.address,
+          area: inquiryForm.area || null,
+          areaUnit: inquiryForm.areaUnit,
+          notes: `위도: ${inquiryForm.lat || '미입력'}, 경도: ${inquiryForm.lng || '미입력'}, 예상용량: ${estimatedCapacity?.toFixed(1) || '미계산'}kW`
+        }),
       })
 
       const data = await response.json()
@@ -157,8 +174,11 @@ export default function DetailPage() {
           buildingType: '',
           address: '',
           area: '',
-          areaUnit: 'pyeong'
+          areaUnit: 'pyeong',
+          lat: undefined,
+          lng: undefined
         })
+        setEstimatedCapacity(null)
       } else {
         alert(data.error || '문의 접수 중 오류가 발생했습니다.')
       }
