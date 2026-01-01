@@ -2029,7 +2029,6 @@
 }
 
 .clayEmoji {
-  font-size: 80px;
   width: 120px;
   height: 120px;
   display: flex;
@@ -2045,22 +2044,13 @@
   border: 2px solid rgba(255, 255, 255, 0.6);
   position: relative;
   overflow: hidden;
-  /* 모든 플랫폼에서 동일한 이모지 표시를 위한 폰트 강제 */
-  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', 'Android Emoji', 'EmojiSymbols', 'EmojiOne Mozilla', 'Twemoji Mozilla', 'Segoe UI', sans-serif !important;
-  font-style: normal !important;
-  font-variant: normal !important;
-  font-weight: normal !important;
-  line-height: 1 !important;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* 이모지 크기 고정 */
-  font-size: 80px !important;
-  text-align: center;
-  vertical-align: middle;
-  /* 이모지가 깨지지 않도록 */
-  unicode-bidi: bidi-override;
-  direction: ltr;
+}
+
+/* SVG 이모지 컨테이너 */
+.clayEmoji svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .clayEmoji::before {
