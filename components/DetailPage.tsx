@@ -1119,12 +1119,85 @@ export default function DetailPage() {
         </div>
       </section>
 
-      {/* 섹션 14: 최종 CTA */}
+      {/* 섹션 14: 제안서가 필요한 이유 */}
       <section 
-        id="final-cta"
         ref={(el: HTMLDivElement | null) => { sectionsRef.current[13] = el }}
         data-section="13"
-        className={`${styles.finalSection} ${isVisible[13] ? styles.fadeIn : ''}`}
+        className={`${styles.section} ${isVisible[13] ? styles.fadeIn : ''}`}
+      >
+        <div className={styles.sectionContent}>
+          <div className={styles.sectionEmoji}>
+            <div className={`${styles.clayEmoji} ${styles.floatAnimation}`}>📋</div>
+          </div>
+          <h2 className={styles.sectionTitle}>
+            왜 제안서가 필요한가요?
+          </h2>
+          <p className={styles.sectionSubtitle}>
+            정확한 주소를 통해 <strong>항공뷰로 분석</strong>하고,<br />
+            <strong>대략적인 설치 가능 용량</strong>을 알려드립니다.
+          </p>
+
+          <div className={styles.proposalProcess}>
+            <div className={styles.proposalStep}>
+              <div className={styles.proposalStepNumber}>1</div>
+              <div className={styles.proposalStepContent}>
+                <h3 className={styles.proposalStepTitle}>정확한 주소 확인</h3>
+                <p className={styles.proposalStepDescription}>
+                  건물의 정확한 주소를 통해 항공뷰로 지붕 구조를 분석합니다.
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.proposalStepArrow}>→</div>
+
+            <div className={styles.proposalStep}>
+              <div className={styles.proposalStepNumber}>2</div>
+              <div className={styles.proposalStepContent}>
+                <h3 className={styles.proposalStepTitle}>항공뷰 분석</h3>
+                <p className={styles.proposalStepDescription}>
+                  위성 이미지로 지붕 면적, 구조, 그늘 등을 확인하여<br />
+                  실제 설치 가능한 패널 배치를 설계합니다.
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.proposalStepArrow}>→</div>
+
+            <div className={styles.proposalStep}>
+              <div className={styles.proposalStepNumber}>3</div>
+              <div className={styles.proposalStepContent}>
+                <h3 className={styles.proposalStepTitle}>설치 용량 계산</h3>
+                <p className={styles.proposalStepDescription}>
+                  분석 결과를 바탕으로 대략적인 설치 가능 용량(kW)과<br />
+                  예상 임대 수익을 계산하여 제안서로 제공합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.proposalInfoBox}>
+            <h3 className={styles.proposalInfoTitle}>제안서에 포함되는 내용</h3>
+            <ul className={styles.proposalInfoList}>
+              <li>✓ 항공뷰 기반 지붕 분석 결과</li>
+              <li>✓ 대략적인 설치 가능 용량 (kW)</li>
+              <li>✓ 예상 연간 임대 수익</li>
+              <li>✓ 5년 선납 및 20년 총 수익</li>
+              <li>✓ 현장 실사 후 최종 확정 안내</li>
+            </ul>
+            <p className={styles.proposalInfoNote}>
+              <strong>참고:</strong> 제안서의 수치는 항공뷰 분석을 기반으로 한 대략적인 값입니다.<br />
+              정확한 수치는 현장 실사 후 최종 확정됩니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 섹션 15: 최종 CTA */}
+      <section 
+        id="final-cta"
+        ref={(el: HTMLDivElement | null) => { sectionsRef.current[14] = el }}
+        data-section="14"
+        className={`${styles.finalSection} ${isVisible[14] ? styles.fadeIn : ''}`}
       >
         <div className={styles.finalContent}>
           <h2 className={styles.finalTitle}>
