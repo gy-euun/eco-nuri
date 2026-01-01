@@ -47,7 +47,7 @@ export async function GET(request: NextRequest) {
       )
     }
 
-    const inquiries = getInquiries()
+    const inquiries = await getInquiries()
     return NextResponse.json({ inquiries }, { status: 200 })
   } catch (error) {
     console.error('문의 조회 오류:', error)

@@ -13,7 +13,7 @@ export async function GET(request: NextRequest) {
       )
     }
 
-    const stats = getStats()
+    const stats = await getStats()
     return NextResponse.json({ stats }, { status: 200 })
   } catch (error) {
     console.error('통계 조회 오류:', error)
@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
 // 계산 통계 증가 (POST)
 export async function POST(request: NextRequest) {
   try {
-    incrementCalculationCount()
+    await incrementCalculationCount()
     return NextResponse.json({ success: true }, { status: 200 })
   } catch (error) {
     console.error('통계 업데이트 오류:', error)
