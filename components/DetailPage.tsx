@@ -293,9 +293,7 @@ export default function DetailPage() {
       >
         <div className={styles.sectionContent}>
           <div className={styles.sectionEmoji}>
-            <div className={styles.floatAnimation}>
-              <EmojiSVG emoji="thinking" size={80} />
-            </div>
+            <div className={`${styles.clayEmoji} ${styles.floatAnimation}`}>🤔</div>
           </div>
           <h2 className={styles.sectionTitle}>
             "왜 지붕만 놀리고 있을까요?"
