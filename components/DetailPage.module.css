@@ -2065,8 +2065,9 @@
 }
 
 .heroEmojiSize {
-  width: 150px !important;
-  height: 150px !important;
+  font-size: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 40px;
   /* 모바일에서 이모지 크기 조정 */
 }

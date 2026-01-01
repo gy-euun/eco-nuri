@@ -4,8 +4,6 @@ import { useState, useEffect, useRef, Suspense } from 'react'
 import Image from 'next/image'
 import styles from './DetailPage.module.css'
 import AnimatedNumber from './AnimatedNumber'
-import EmojiSVG from './EmojiSVG'
-import EmojiIcon from './EmojiIcon'
 
 export default function DetailPage() {
   const [isVisible, setIsVisible] = useState<{ [key: number]: boolean }>({})
@@ -203,9 +201,7 @@ export default function DetailPage() {
               }
             }}
           >
-            <span className={styles.floatingCTAIcon} aria-hidden="true">
-              <EmojiIcon emoji="💰" size={20} />
-            </span>
+            <span className={styles.floatingCTAIcon} aria-hidden="true">💰</span>
             <span className={styles.floatingCTAText}>수익 계산하기</span>
           </button>
           <button 
@@ -219,9 +215,7 @@ export default function DetailPage() {
               }
             }}
           >
-            <span className={styles.floatingCTAIcon} aria-hidden="true">
-              <EmojiIcon emoji="📄" size={20} />
-            </span>
+            <span className={styles.floatingCTAIcon} aria-hidden="true">📄</span>
             <span className={styles.floatingCTAText}>제안서 받아보기</span>
           </button>
         </div>
@@ -353,9 +347,7 @@ export default function DetailPage() {
       >
         <div className={styles.sectionContent}>
           <div className={styles.sectionEmoji}>
-            <div className={styles.pulseAnimation}>
-              <EmojiSVG emoji="worried" size={80} />
-            </div>
+            <div className={`${styles.clayEmoji} ${styles.pulseAnimation}`}>😰</div>
           </div>
           <h2 className={styles.sectionTitle}>
             건물주가 태양광을 거부하는 진짜 이유
@@ -452,9 +444,7 @@ export default function DetailPage() {
       >
         <div className={styles.sectionContent}>
           <div className={styles.sectionEmoji}>
-            <div className={styles.rotateAnimation}>
-              <EmojiSVG emoji="money" size={80} />
-            </div>
+            <div className={`${styles.clayEmoji} ${styles.rotateAnimation}`}>💰</div>
           </div>
           <h2 className={styles.sectionTitle}>
             "제 건물 지붕, 정확히 얼마 받을 수 있나요?"
@@ -581,9 +571,7 @@ export default function DetailPage() {
       >
         <div className={styles.sectionContent}>
           <div className={styles.sectionEmoji}>
-            <div className={styles.floatAnimation}>
-              <EmojiSVG emoji="shrug" size={80} />
-            </div>
+            <div className={`${styles.clayEmoji} ${styles.floatAnimation}`}>🤷</div>
           </div>
           <h2 className={styles.sectionTitle}>
             "이렇게 단순한 구조가 정말 가능한가요?"
@@ -745,9 +733,7 @@ export default function DetailPage() {
       >
         <div className={styles.sectionContent}>
           <div className={styles.sectionEmoji}>
-            <div className={styles.bounceAnimation}>
-              <EmojiSVG emoji="pray" size={80} />
-            </div>
+            <div className={`${styles.clayEmoji} ${styles.bounceAnimation}`}>🙏</div>
           </div>
           <h2 className={styles.sectionTitle}>
             솔직한 고백: 모든 지붕이 가능한 건 아닙니다
@@ -789,9 +775,7 @@ export default function DetailPage() {
       >
         <div className={styles.sectionContent}>
           <div className={styles.sectionEmoji}>
-            <div className={styles.pulseAnimation}>
-              <EmojiSVG emoji="construction" size={80} />
-            </div>
+            <div className={`${styles.clayEmoji} ${styles.pulseAnimation}`}>🏗️</div>
           </div>
           <h2 className={styles.sectionTitle}>
             실제 시공 사례
@@ -926,12 +910,10 @@ export default function DetailPage() {
       >
         <div className={styles.sectionContent}>
           <div className={styles.sectionEmoji}>
-            <div className={styles.rotateAnimation}>
-              <EmojiSVG emoji="smile" size={80} />
-            </div>
+            <div className={`${styles.clayEmoji} ${styles.rotateAnimation}`}>😊</div>
           </div>
           <h2 className={styles.sectionTitle}>
-            <EmojiIcon emoji="⭐" size={28} /> 실제 건물주들의 후기
+            ⭐ 실제 건물주들의 후기
           </h2>
           <p className={styles.sectionSubtitle}>
             지붕 임대를 선택한 건물주들의 <strong>실제 경험담</strong>입니다.<br />
@@ -1172,18 +1154,14 @@ export default function DetailPage() {
             
             <div className={styles.finalCTAHighlight}>
               <div className={styles.finalCTAHighlightItem}>
-                <span className={styles.finalCTAHighlightIcon}>
-                  <EmojiIcon emoji="⏱️" size={24} />
-                </span>
+                <span className={styles.finalCTAHighlightIcon}>⏱️</span>
                 <div>
                   <strong>3일 내 제공</strong>
                   <span>빠른 검토 가능</span>
                 </div>
               </div>
               <div className={styles.finalCTAHighlightItem}>
-                <span className={styles.finalCTAHighlightIcon}>
-                  <EmojiIcon emoji="💰" size={24} />
-                </span>
+                <span className={styles.finalCTAHighlightIcon}>💰</span>
                 <div>
                   <strong>100% 무료</strong>
                   <span>비용·부담 없음</span>
@@ -1251,9 +1229,7 @@ export default function DetailPage() {
               </div>
 
               <div className={styles.calculatorResult}>
-                <h3 className={styles.calculatorResultTitle}>
-                  <EmojiIcon emoji="🌤️" size={24} /> 예상 발전소 정보
-                </h3>
+                <h3 className={styles.calculatorResultTitle}>🌤️ 예상 발전소 정보</h3>
                 <div className={styles.calculatorInfo}>
                   <div className={styles.calculatorInfoItem}>
                     <span className={styles.calculatorInfoLabel}>최대 발전 용량</span>
@@ -1268,9 +1244,7 @@ export default function DetailPage() {
                 </div>
 
                 <div className={styles.calculatorRevenue}>
-                  <h4 className={styles.calculatorRevenueTitle}>
-                    <EmojiIcon emoji="💰" size={20} /> {capacity.toFixed(1)}kW 발전소 설치시 예상 임대 수익
-                  </h4>
+                  <h4 className={styles.calculatorRevenueTitle}>💰 {capacity.toFixed(1)}kW 발전소 설치시 예상 임대 수익</h4>
                   <table className={styles.calculatorTable}>
                     <thead>
                       <tr>
