@@ -23,5 +23,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", "**/*-example.ts", "**/*.example.ts", "**/*-backup.ts", "**/*-postgres.ts", "prisma/schema.prisma.example", "scripts/**/*"]
+  "exclude": ["node_modules", "**/*-example.ts", "**/*.example.ts", "**/*-backup.ts", "**/*-postgres.ts", "prisma/schema.prisma.example", "scripts", "scripts/**/*"]
 }
