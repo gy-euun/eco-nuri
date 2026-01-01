@@ -53,7 +53,7 @@ export const authenticateAdmin = async (req: NextRequest): Promise<AdminUser | n
 
 // 로그인 처리
 export const login = async (username: string, password: string): Promise<{ success: boolean; token?: string; error?: string }> => {
-  const admin = getAdmin()
+  const admin = await getAdmin()
   if (!admin || admin.username !== username) {
     return { success: false, error: '아이디 또는 비밀번호가 올바르지 않습니다.' }
   }
