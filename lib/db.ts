@@ -1,5 +1,6 @@
 // Supabase 사용
 import { createClient } from '@supabase/supabase-js'
+import { addInquiryToSheets } from './google-sheets'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!
@@ -56,7 +57,7 @@ export const saveInquiry = async (
   // 통계 업데이트
   await updateStats(inquiry.buildingType)
 
-  return {
+  const savedInquiry = {
     id: data.id,
     name: data.name,
     phone: data.phone,
@@ -68,6 +69,21 @@ export const saveInquiry = async (
     status: data.status as Inquiry['status'],
     notes: data.notes
   }
+
+  // Google Sheets에 데이터 추가 (비동기, 실패해도 전체 프로세스는 계속)
+  addInquiryToSheets({
+    name: savedInquiry.name,
+    phone: savedInquiry.phone,
+    buildingType: savedInquiry.buildingType,
+    address: savedInquiry.address,
+    area: savedInquiry.area,
+    areaUnit: savedInquiry.areaUnit,
+    createdAt: savedInquiry.createdAt,
+  }).catch((error) => {
+    console.error('Google Sheets 추가 실패 (계속 진행):', error)
+  })
+
+  return savedInquiry
 }
 
 // 문의 내역 조회
