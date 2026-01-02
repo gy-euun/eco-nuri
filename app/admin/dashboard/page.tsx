@@ -102,6 +102,26 @@ export default function AdminDashboard() {
     }
   }
 
+  // 면적을 평으로 변환
+  const convertToPyeong = (area: string, unit: 'pyeong' | 'sqm'): number => {
+    const areaNum = parseFloat(area) || 0
+    if (unit === 'sqm') {
+      return areaNum / 3.3058 // 1평 = 3.3058m²
+    }
+    return areaNum
+  }
+
+  // 발전 용량 계산 (1.5평당 1kW)
+  const calculateCapacity = (pyeong: number): number => {
+    if (pyeong <= 0) return 0
+    return Math.floor((pyeong / 1.5) * 10) / 10
+  }
+
+  // 수익금 계산 (kW * 200,000원)
+  const calculateRevenue = (capacity: number): number => {
+    return Math.floor(capacity * 200000)
+  }
+
   const filteredInquiries = statusFilter === 'all' 
     ? inquiries 
     : inquiries.filter(inq => inq.status === statusFilter)
@@ -174,18 +194,47 @@ export default function AdminDashboard() {
         {filteredInquiries.length === 0 ? (
           <div className={styles.emptyState}>문의 내역이 없습니다.</div>
         ) : (
-          filteredInquiries.map((inquiry) => (
-            <div key={inquiry.id} className={styles.inquiryCard}>
-              <div className={styles.inquiryHeader}>
-                <div>
-                  <h3 className={styles.inquiryName}>{inquiry.name}</h3>
-                  <p className={styles.inquiryPhone}>{inquiry.phone}</p>
+          filteredInquiries.map((inquiry) => {
+            const pyeongArea = convertToPyeong(inquiry.area || '0', inquiry.areaUnit)
+            const capacity = calculateCapacity(pyeongArea)
+            const revenue = calculateRevenue(capacity)
+
+            return (
+              <div key={inquiry.id} className={styles.inquiryCard}>
+                <div className={styles.inquiryHeader}>
+                  <div>
+                    <h3 className={styles.inquiryName}>{inquiry.name}</h3>
+                    <p className={styles.inquiryPhone}>{inquiry.phone}</p>
+                  </div>
+                  <span className={`${styles.statusBadge} ${styles[`status${inquiry.status.charAt(0).toUpperCase() + inquiry.status.slice(1)}`]}`}>
+                    {statusLabels[inquiry.status]}
+                  </span>
                 </div>
-                <span className={`${styles.statusBadge} ${styles[`status${inquiry.status.charAt(0).toUpperCase() + inquiry.status.slice(1)}`]}`}>
-                  {statusLabels[inquiry.status]}
-                </span>
-              </div>
-              <div className={styles.inquiryDetails}>
+
+                {/* kW 및 수익금 카드 */}
+                {inquiry.area && parseFloat(inquiry.area) > 0 && (
+                  <div className={styles.revenueCard}>
+                    <div className={styles.revenueCardHeader}>
+                      <span className={styles.revenueCardIcon}>⚡</span>
+                      <span className={styles.revenueCardTitle}>예상 발전소 정보</span>
+                    </div>
+                    <div className={styles.revenueCardContent}>
+                      <div className={styles.revenueItem}>
+                        <div className={styles.revenueItemLabel}>발전 용량</div>
+                        <div className={styles.revenueItemValue}>{capacity.toFixed(1)} kW</div>
+                        <div className={styles.revenueItemNote}>1.5평당 1kW 기준</div>
+                      </div>
+                      <div className={styles.revenueDivider}></div>
+                      <div className={styles.revenueItem}>
+                        <div className={styles.revenueItemLabel}>예상 수익금</div>
+                        <div className={styles.revenueItemValue}>{revenue.toLocaleString()}원</div>
+                        <div className={styles.revenueItemNote}>kW × 200,000원</div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                <div className={styles.inquiryDetails}>
                 <div className={styles.detailRow}>
                   <span className={styles.detailLabel}>건물 유형:</span>
                   <span className={styles.detailValue}>{inquiry.buildingType}</span>
@@ -230,7 +279,8 @@ export default function AdminDashboard() {
                 </button>
               </div>
             </div>
-          ))
+            )
+          })
         )}
       </div>
 
@@ -245,6 +295,22 @@ export default function AdminDashboard() {
                 <p><strong>연락처:</strong> {selectedInquiry.phone}</p>
                 <p><strong>건물 유형:</strong> {selectedInquiry.buildingType}</p>
                 <p><strong>주소:</strong> {selectedInquiry.address}</p>
+                {selectedInquiry.area && (
+                  <>
+                    <p><strong>면적:</strong> {selectedInquiry.area} {selectedInquiry.areaUnit === 'pyeong' ? '평' : 'm²'}</p>
+                    {(() => {
+                      const pyeongArea = convertToPyeong(selectedInquiry.area || '0', selectedInquiry.areaUnit)
+                      const capacity = calculateCapacity(pyeongArea)
+                      const revenue = calculateRevenue(capacity)
+                      return (
+                        <>
+                          <p><strong>예상 발전 용량:</strong> {capacity.toFixed(1)} kW</p>
+                          <p><strong>예상 수익금:</strong> {revenue.toLocaleString()}원</p>
+                        </>
+                      )
+                    })()}
+                  </>
+                )}
               </div>
               <div className={styles.modalForm}>
                 <label className={styles.modalLabel}>상태</label>
