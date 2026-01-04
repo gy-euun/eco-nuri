@@ -2653,17 +2653,18 @@
   }
 
   .floatingCTAText {
-    font-size: 14px;
-  }
-
-  /* 모바일에서 3개 버튼이 너무 많으면 텍스트 숨김 */
-  .floatingCTAButton .floatingCTAText {
-    display: none;
+    font-size: 12px;
+    display: block;
   }
 
   .floatingCTAButton {
-    flex: 0 0 auto;
-    padding: 14px;
-    min-width: 48px;
+    flex: 1;
+    padding: 12px 8px;
+    min-width: 0;
+    gap: 6px;
+  }
+
+  .floatingCTAIcon {
+    font-size: 20px;
   }
 }
