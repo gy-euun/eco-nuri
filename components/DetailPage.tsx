@@ -172,6 +172,22 @@ export default function DetailPage() {
       const data = await response.json()
 
       if (response.ok) {
+        // Facebook Pixel 이벤트 트리거 - 문의 제출
+        if (typeof window !== 'undefined' && (window as any).fbq) {
+          (window as any).fbq('track', 'Lead', {
+            content_name: '제안서 문의',
+            content_category: inquiryForm.buildingType,
+            value: inquiryForm.area ? parseFloat(inquiryForm.area) : 0,
+            currency: 'KRW',
+          })
+          
+          // CompleteRegistration 이벤트도 함께 전송
+          (window as any).fbq('track', 'CompleteRegistration', {
+            content_name: '문의하기',
+            status: true,
+          })
+        }
+
         alert('문의가 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.')
         setShowInquiry(false)
         setInquiryForm({
