@@ -97,6 +97,29 @@ export default function DetailPage() {
     ctaElement?.scrollIntoView({ behavior: 'smooth' })
   }
 
+  const handleCopyLink = async () => {
+    const currentUrl = window.location.href
+    try {
+      await navigator.clipboard.writeText(currentUrl)
+      alert('링크가 클립보드에 복사되었습니다!')
+    } catch (error) {
+      // 클립보드 API가 지원되지 않는 경우 대체 방법
+      const textArea = document.createElement('textarea')
+      textArea.value = currentUrl
+      textArea.style.position = 'fixed'
+      textArea.style.opacity = '0'
+      document.body.appendChild(textArea)
+      textArea.select()
+      try {
+        document.execCommand('copy')
+        alert('링크가 클립보드에 복사되었습니다!')
+      } catch (err) {
+        alert('링크 복사에 실패했습니다. 링크를 직접 복사해주세요:\n' + currentUrl)
+      }
+      document.body.removeChild(textArea)
+    }
+  }
+
   // 면적 계산 (평 → m² 변환: 1평 = 3.3058m²)
   const calculateArea = (value: number, unit: 'pyeong' | 'sqm') => {
     if (unit === 'pyeong') {
@@ -217,6 +240,20 @@ export default function DetailPage() {
           >
             <span className={styles.floatingCTAIcon} aria-hidden="true">📄</span>
             <span className={styles.floatingCTAText}>제안서 받아보기</span>
+          </button>
+          <button 
+            className={`${styles.floatingCTAButton} ${styles.floatingCTAShare}`}
+            onClick={handleCopyLink}
+            aria-label="링크 복사하기"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                handleCopyLink()
+              }
+            }}
+          >
+            <span className={styles.floatingCTAIcon} aria-hidden="true">🔗</span>
+            <span className={styles.floatingCTAText}>링크 복사</span>
           </button>
         </div>
       )}

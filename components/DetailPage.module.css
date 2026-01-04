@@ -2617,6 +2617,15 @@
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
 }
 
+.floatingCTAShare {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+}
+
+.floatingCTAShare:hover {
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.5);
+}
+
 .floatingCTAIcon {
   font-size: 24px;
   line-height: 1;
@@ -2634,14 +2643,27 @@
     transform: none;
     width: calc(100% - 32px);
     max-width: none;
+    flex-wrap: wrap;
   }
 
   .floatingCTAButton {
     font-size: 14px;
     padding: 14px 20px;
+    min-width: 0;
   }
 
   .floatingCTAText {
     font-size: 14px;
+  }
+
+  /* 모바일에서 3개 버튼이 너무 많으면 텍스트 숨김 */
+  .floatingCTAButton .floatingCTAText {
+    display: none;
+  }
+
+  .floatingCTAButton {
+    flex: 0 0 auto;
+    padding: 14px;
+    min-width: 48px;
   }
 }
