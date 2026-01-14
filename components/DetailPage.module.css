@@ -2688,11 +2688,30 @@
 /* 반응형 디자인 */
 @media (max-width: 768px) {
   .section {
-    padding: 48px 16px;
+    padding: 64px 16px;
+    margin-bottom: 24px;
   }
 
   .heroSection {
-    padding: 60px 16px 48px;
+    padding: 80px 16px 64px;
+    margin-bottom: 32px;
+  }
+  
+  .finalSection {
+    padding: 80px 16px;
+    margin-top: 32px;
+  }
+  
+  .sectionTitle {
+    margin-bottom: 20px;
+  }
+  
+  .sectionSubtitle {
+    margin-bottom: 32px;
+  }
+  
+  .sectionIntro {
+    margin-bottom: 32px;
   }
 
   .heroTitle {
