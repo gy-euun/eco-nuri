@@ -2505,10 +2505,34 @@
 
   .heroTitle {
     font-size: 26px;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    max-width: 100%;
   }
 
   .sectionTitle {
     font-size: 22px;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
+  
+  .sectionContent {
+    overflow-x: hidden;
+    padding: 0 4px;
+  }
+  
+  .heroContent {
+    overflow-x: hidden;
+    padding: 0 4px;
+  }
+  
+  .section {
+    overflow-x: hidden;
+  }
+  
+  .heroSection {
+    overflow-x: hidden;
   }
 
   .statCard {
