@@ -1355,6 +1355,60 @@
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
 
+.finalCTAShareButton {
+  width: 100%;
+  height: 56px;
+  background: var(--white);
+  color: var(--toss-blue-600);
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid var(--toss-blue-600);
+  border-radius: 16px;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.finalCTAShareButton:hover {
+  background: var(--toss-blue-50);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(79, 70, 229, 0.2);
+}
+
+.finalCTAShareButton:active {
+  transform: scale(0.98);
+}
+
+.finalCTAShareIcon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.finalCTAShareText {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 768px) {
+  .finalCTAShareButton {
+    height: 52px;
+    font-size: 15px;
+  }
+  
+  .finalCTAShareIcon {
+    font-size: 18px;
+  }
+  
+  .finalCTAShareText {
+    font-size: 15px;
+  }
+}
+
 /* 제안서 프로세스 스타일 */
 .proposalProcess {
   display: flex;

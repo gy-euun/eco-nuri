@@ -63,6 +63,20 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* 모든 요소에 Pretendard 폰트 강제 적용 */
+* {
+  font-family: var(--font-pretendard) !important;
+}
+
+/* 이모지는 예외 */
+.emoji, 
+[class*="emoji"],
+[class*="Emoji"],
+.clayEmoji,
+.floatingCTAIcon {
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', 'Android Emoji', 'EmojiSymbols', 'EmojiOne Mozilla', 'Twemoji Mozilla', 'Segoe UI', sans-serif !important;
+}
+
 /* 이모지 스타일 통일 - 모든 플랫폼에서 동일하게 표시 */
 .emoji, 
 [class*="emoji"],
@@ -99,6 +113,45 @@ body {
 @media (max-width: 768px) {
   html {
     font-size: 14px;
+  }
+  
+  body {
+    font-size: 15px;
+    line-height: 1.7;
+    letter-spacing: -0.01em;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.02em;
+    line-height: 1.4;
+  }
+  
+  p {
+    font-size: 15px;
+    line-height: 1.7;
+    letter-spacing: -0.01em;
+  }
+  
+  button {
+    font-size: 15px;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* 작은 모바일 (480px 이하) */
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+  
+  body {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3 {
+    font-size: 1.5rem;
+    line-height: 1.3;
   }
 }
 

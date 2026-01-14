@@ -262,20 +262,6 @@ export default function DetailPage() {
             <span className={styles.floatingCTAIcon} aria-hidden="true">📄</span>
             <span className={styles.floatingCTAText}>제안서 받아보기</span>
           </button>
-          <button 
-            className={`${styles.floatingCTAButton} ${styles.floatingCTAShare}`}
-            onClick={handleCopyLink}
-            aria-label="링크 복사하기"
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault()
-                handleCopyLink()
-              }
-            }}
-          >
-            <span className={styles.floatingCTAIcon} aria-hidden="true">🔗</span>
-            <span className={styles.floatingCTAText}>링크 복사</span>
-          </button>
         </div>
       )}
 
@@ -1328,6 +1314,15 @@ export default function DetailPage() {
 
             <button type="button" className={styles.finalCTAButton} onClick={() => setShowInquiry(true)}>
               제안서 무료로 받아보기 →
+            </button>
+            <button 
+              type="button" 
+              className={styles.finalCTAShareButton}
+              onClick={handleCopyLink}
+              aria-label="링크 복사하기"
+            >
+              <span className={styles.finalCTAShareIcon}>🔗</span>
+              <span className={styles.finalCTAShareText}>링크 복사</span>
             </button>
             <div className={styles.finalCTATags}>
               <span className={styles.finalCTATag}>3일 내 제공</span>
