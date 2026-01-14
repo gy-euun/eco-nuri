@@ -32,11 +32,11 @@
 }
 
 .sectionTitle {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.5;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.4;
   color: var(--gray-900);
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   letter-spacing: -0.02em;
   word-break: keep-all;
   overflow-wrap: break-word;
@@ -44,12 +44,12 @@
 }
 
 .sectionSubtitle {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 1.6;
-  color: var(--gray-600);
+  line-height: 1.75;
+  color: var(--gray-700);
   margin-bottom: 48px;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
 }
 
 .sectionIntro {
@@ -101,15 +101,16 @@
 }
 
 .heroTitle {
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 36px;
+  font-weight: 800;
   line-height: 1.4;
   color: var(--gray-900);
-  margin-bottom: 40px;
+  margin-bottom: 48px;
   letter-spacing: -0.03em;
   word-break: keep-all;
   overflow-wrap: break-word;
   max-width: 100%;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .heroLine1,
@@ -132,16 +133,16 @@
 }
 
 .statCard {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  padding: 24px 32px;
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 28px 36px;
+  border-radius: 24px;
   box-shadow: 
-    inset 0 2px 4px rgba(255, 255, 255, 0.9),
-    inset 0 -2px 4px rgba(0, 0, 0, 0.05),
-    0 6px 16px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  min-width: 120px;
+    0 8px 24px rgba(79, 70, 229, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  min-width: 140px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .statNumber {
@@ -209,41 +210,75 @@
 
 .heroCTA {
   width: 100%;
-  height: 56px;
+  min-height: 64px;
   background: linear-gradient(135deg, var(--toss-blue-600) 0%, var(--toss-blue-500) 100%);
   color: var(--white);
-  font-size: 18px;
-  font-weight: 600;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
-  transition: all 0.2s ease;
+  font-size: 19px;
+  font-weight: 700;
+  border-radius: 20px;
+  box-shadow: 
+    0 8px 24px rgba(79, 70, 229, 0.4),
+    0 4px 12px rgba(79, 70, 229, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   letter-spacing: -0.01em;
   word-break: keep-all;
   overflow-wrap: break-word;
   white-space: normal;
-  padding: 0 16px;
+  padding: 18px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroCTA::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.heroCTA:hover::before {
+  left: 100%;
+}
+
+.heroCTA:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 12px 32px rgba(79, 70, 229, 0.5),
+    0 6px 16px rgba(79, 70, 229, 0.4);
 }
 
 .heroCTA:active {
-  transform: scale(0.98);
-  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
 
 .heroCTASecondary {
   width: 100%;
-  height: 56px;
+  min-height: 64px;
   background-color: var(--white);
   color: var(--toss-blue-600);
-  font-size: 18px;
-  font-weight: 600;
-  border: 2px solid var(--toss-blue-600);
-  border-radius: 16px;
-  transition: all 0.2s ease;
+  font-size: 19px;
+  font-weight: 700;
+  border: 2.5px solid var(--toss-blue-600);
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   letter-spacing: -0.01em;
   word-break: keep-all;
   overflow-wrap: break-word;
   white-space: normal;
-  padding: 0 16px;
+  padding: 18px 24px;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+}
+
+.heroCTASecondary:hover {
+  background-color: var(--toss-blue-50);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
+  border-color: var(--toss-blue-700);
 }
 
 .heroCTASecondary:active {
@@ -364,11 +399,18 @@
 }
 
 .quoteItem {
-  padding: 20px 24px;
+  padding: 28px 32px;
   background-color: var(--white);
-  border-left: 4px solid var(--toss-blue-600);
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border-left: 5px solid var(--toss-blue-600);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quoteItem:hover {
+  transform: translateX(4px);
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.15);
+  border-left-color: var(--toss-blue-500);
 }
 
 .quoteItem p {
@@ -1547,20 +1589,50 @@
 
 .finalCTAButton {
   width: 100%;
-  height: 64px;
+  min-height: 72px;
   background: linear-gradient(135deg, var(--toss-blue-600) 0%, var(--toss-blue-500) 100%);
   color: var(--white);
-  font-size: 20px;
-  font-weight: 700;
-  border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
-  transition: all 0.2s ease;
+  font-size: 21px;
+  font-weight: 800;
+  border-radius: 24px;
+  box-shadow: 
+    0 12px 32px rgba(79, 70, 229, 0.4),
+    0 6px 16px rgba(79, 70, 229, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   letter-spacing: -0.01em;
   margin-bottom: 24px;
   word-break: keep-all;
   overflow-wrap: break-word;
   white-space: normal;
-  padding: 0 16px;
+  padding: 20px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.finalCTAButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.6s;
+}
+
+.finalCTAButton:hover::before {
+  left: 100%;
+}
+
+.finalCTAButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 16px 40px rgba(79, 70, 229, 0.5),
+    0 8px 20px rgba(79, 70, 229, 0.4);
+}
+
+.finalCTAButton:active {
+  transform: translateY(0) scale(0.98);
 }
 
 .finalCTAButton:active {
@@ -2948,17 +3020,37 @@
   }
 
   .heroTitle {
+    font-size: 30px;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .sectionTitle {
     font-size: 26px;
     word-break: keep-all;
     overflow-wrap: break-word;
     max-width: 100%;
+    margin-bottom: 28px;
   }
-
-  .sectionTitle {
-    font-size: 22px;
-    word-break: keep-all;
-    overflow-wrap: break-word;
-    max-width: 100%;
+  
+  .sectionSubtitle {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+  
+  .heroCTA,
+  .heroCTASecondary {
+    min-height: 64px;
+    font-size: 18px;
+    padding: 18px 24px;
+  }
+  
+  .finalCTAButton {
+    min-height: 72px;
+    font-size: 20px;
+    padding: 20px 28px;
   }
   
   .sectionContent {

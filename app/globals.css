@@ -132,40 +132,45 @@ h1, h2, h3, h4, h5, h6, p, span, div, button, a, label, input, textarea, select 
   word-break: keep-all;
 }
 
-/* 모바일 최적화 */
+/* 모바일 최적화 - 40-50대 가독성 향상 */
 @media (max-width: 768px) {
   html {
-    font-size: 14px;
+    font-size: 16px; /* 더 큰 기본 폰트 */
   }
   
   body {
-    font-size: 15px;
-    line-height: 1.7;
-    letter-spacing: -0.01em;
+    font-size: 17px; /* 본문 폰트 크기 증가 */
+    line-height: 1.8; /* 더 넓은 줄간격 */
+    letter-spacing: -0.005em; /* 약간의 자간 */
     word-break: keep-all;
     overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    letter-spacing: -0.02em;
-    line-height: 1.4;
+    letter-spacing: -0.015em;
+    line-height: 1.5; /* 제목 줄간격 */
     word-break: keep-all;
     overflow-wrap: break-word;
+    font-weight: 700; /* 더 굵은 제목 */
   }
   
   p {
-    font-size: 15px;
-    line-height: 1.7;
-    letter-spacing: -0.01em;
+    font-size: 17px; /* 본문 폰트 크기 증가 */
+    line-height: 1.8; /* 넓은 줄간격 */
+    letter-spacing: -0.005em;
     word-break: keep-all;
     overflow-wrap: break-word;
   }
   
   button {
-    font-size: 15px;
-    letter-spacing: -0.01em;
+    font-size: 17px; /* 버튼 폰트 크기 증가 */
+    letter-spacing: -0.005em;
     word-break: keep-all;
     white-space: normal;
+    min-height: 56px; /* 최소 터치 영역 56px */
+    padding: 16px 24px; /* 충분한 패딩 */
   }
   
   /* 삼성 브라우저 특화 */
@@ -176,24 +181,29 @@ h1, h2, h3, h4, h5, h6, p, span, div, button, a, label, input, textarea, select 
   }
 }
 
-/* 작은 모바일 (480px 이하) */
+/* 작은 모바일 (480px 이하) - 40-50대 최적화 */
 @media (max-width: 480px) {
   html {
-    font-size: 13px;
+    font-size: 15px; /* 작은 화면에서도 충분한 크기 */
   }
   
   body {
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 16px; /* 본문 폰트 유지 */
+    line-height: 1.75; /* 넓은 줄간격 */
     word-break: keep-all;
     overflow-wrap: break-word;
   }
   
   h1, h2, h3 {
-    font-size: 1.5rem;
-    line-height: 1.3;
+    font-size: 1.75rem; /* 제목 크기 증가 */
+    line-height: 1.4;
     word-break: keep-all;
     overflow-wrap: break-word;
+  }
+  
+  button {
+    font-size: 16px;
+    min-height: 56px; /* 최소 터치 영역 유지 */
   }
   
   /* 작은 화면에서 더 강력한 오버플로우 방지 */
