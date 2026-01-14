@@ -109,6 +109,29 @@ body {
   vertical-align: middle;
 }
 
+/* 삼성 모바일 및 안드로이드 브라우저 최적화 */
+html, body {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* 모든 텍스트 요소에 오버플로우 방지 */
+h1, h2, h3, h4, h5, h6, p, span, div, button, a, label, input, textarea, select {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+/* 컨테이너 요소 오버플로우 방지 */
+.container, .section, .sectionContent, .heroContent {
+  overflow-x: hidden;
+  max-width: 100%;
+  word-break: keep-all;
+}
+
 /* 모바일 최적화 */
 @media (max-width: 768px) {
   html {
@@ -119,22 +142,37 @@ body {
     font-size: 15px;
     line-height: 1.7;
     letter-spacing: -0.01em;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
   
   h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.02em;
     line-height: 1.4;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
   
   p {
     font-size: 15px;
     line-height: 1.7;
     letter-spacing: -0.01em;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
   
   button {
     font-size: 15px;
     letter-spacing: -0.01em;
+    word-break: keep-all;
+    white-space: normal;
+  }
+  
+  /* 삼성 브라우저 특화 */
+  @supports (-webkit-appearance: none) {
+    * {
+      -webkit-text-size-adjust: 100%;
+    }
   }
 }
 
@@ -147,11 +185,21 @@ body {
   body {
     font-size: 14px;
     line-height: 1.6;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
   
   h1, h2, h3 {
     font-size: 1.5rem;
     line-height: 1.3;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  
+  /* 작은 화면에서 더 강력한 오버플로우 방지 */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
 

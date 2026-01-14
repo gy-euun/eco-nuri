@@ -21,6 +21,9 @@
 .sectionContent {
   max-width: 680px;
   margin: 0 auto;
+  overflow-x: hidden;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .sectionTitle {
@@ -30,6 +33,9 @@
   color: var(--gray-900);
   margin-bottom: 16px;
   letter-spacing: -0.02em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 .sectionSubtitle {
@@ -60,6 +66,9 @@
 .heroContent {
   max-width: 680px;
   margin: 0 auto;
+  overflow-x: hidden;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .heroLogo {
@@ -92,6 +101,9 @@
   color: var(--gray-900);
   margin-bottom: 40px;
   letter-spacing: -0.03em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 .heroLine1,
@@ -200,6 +212,10 @@
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
   transition: all 0.2s ease;
   letter-spacing: -0.01em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+  padding: 0 16px;
 }
 
 .heroCTA:active {
@@ -218,6 +234,10 @@
   border-radius: 16px;
   transition: all 0.2s ease;
   letter-spacing: -0.01em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+  padding: 0 16px;
 }
 
 .heroCTASecondary:active {
@@ -1348,6 +1368,10 @@
   transition: all 0.2s ease;
   letter-spacing: -0.01em;
   margin-bottom: 24px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+  padding: 0 16px;
 }
 
 .finalCTAButton:active {
@@ -1371,6 +1395,10 @@
   gap: 8px;
   transition: all 0.2s ease;
   cursor: pointer;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+  padding: 0 16px;
 }
 
 .finalCTAShareButton:hover {
@@ -2639,6 +2667,10 @@
   box-shadow: 0 8px 24px rgba(79, 70, 229, 0.4);
   border: none;
   cursor: pointer;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
   transition: all 0.2s ease;
   letter-spacing: -0.01em;
   white-space: nowrap;
@@ -2686,7 +2718,10 @@
 }
 
 .floatingCTAText {
-  white-space: nowrap;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 @media (max-width: 768px) {
