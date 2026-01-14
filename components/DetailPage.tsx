@@ -603,6 +603,75 @@ export default function DetailPage() {
         </div>
       </section>
 
+      {/* 섹션 6.5: 업계 최고 임대료 도전 */}
+      <section 
+        ref={(el: HTMLDivElement | null) => { sectionsRef.current[15] = el }}
+        data-section="15"
+        className={`${styles.section} ${styles.challengeSection} ${isVisible[15] ? styles.scaleIn : ''}`}
+      >
+        <div className={styles.sectionContent}>
+          <div className={styles.challengeBadge}>
+            <span className={styles.challengeBadgeText}>🏆 업계 최고 수준</span>
+          </div>
+          <h2 className={styles.challengeTitle}>
+            업계 최고의 임대료 수익을<br />
+            <strong className={styles.challengeHighlight}>도전합니다</strong>
+          </h2>
+          <p className={styles.challengeSubtitle}>
+            에코누리는 단순히 지붕을 임대하는 것이 아닙니다.<br />
+            <strong>건물주에게 최고의 수익을 보장</strong>하는 것이 우리의 목표입니다.
+          </p>
+          
+          <div className={styles.challengeGrid}>
+            <div className={styles.challengeCard}>
+              <div className={styles.challengeCardIcon}>💰</div>
+              <h3 className={styles.challengeCardTitle}>경쟁력 있는 단가</h3>
+              <p className={styles.challengeCardDesc}>
+                1kW당 연 4만원의 명확한 기준으로<br />
+                업계 최고 수준의 임대료를 제공합니다
+              </p>
+            </div>
+            
+            <div className={styles.challengeCard}>
+              <div className={styles.challengeCardIcon}>📊</div>
+              <h3 className={styles.challengeCardTitle}>투명한 계산</h3>
+              <p className={styles.challengeCardDesc}>
+                숨기지 않고 기준을 공개합니다.<br />
+                계산 과정을 모두 확인할 수 있습니다
+              </p>
+            </div>
+            
+            <div className={styles.challengeCard}>
+              <div className={styles.challengeCardIcon}>🤝</div>
+              <h3 className={styles.challengeCardTitle}>장기 파트너십</h3>
+              <p className={styles.challengeCardDesc}>
+                15~20년 장기 계약으로<br />
+                안정적인 수익을 보장합니다
+              </p>
+            </div>
+          </div>
+          
+          <div className={styles.challengePromise}>
+            <div className={styles.challengePromiseIcon}>✨</div>
+            <p className={styles.challengePromiseText}>
+              <strong>"우리는 건물주에게 최고의 수익을 드리기 위해 노력합니다."</strong><br />
+              <span className={styles.challengePromiseSubtext}>
+                단순한 약속이 아닌, 계약서에 명시되는 확정된 임대료입니다.
+              </span>
+            </p>
+          </div>
+          
+          <div className={styles.challengeCTA}>
+            <button 
+              className={styles.challengeCTAButton}
+              onClick={() => setShowInquiry(true)}
+            >
+              내 건물의 최고 수익 확인하기 →
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* 섹션 7: 왜 단순한 구조가 가능한가 */}
       <section 
         ref={(el: HTMLDivElement | null) => { sectionsRef.current[6] = el }}
