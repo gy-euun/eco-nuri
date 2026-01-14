@@ -269,7 +269,7 @@ export default function DetailPage() {
       <section 
         ref={(el: HTMLDivElement | null) => { sectionsRef.current[0] = el }}
         data-section="0"
-        className={`${styles.heroSection} ${isVisible[0] ? styles.fadeIn : ''}`}
+        className={`${styles.heroSection} ${isVisible[0] ? styles.scaleIn : ''}`}
       >
         <div className={styles.heroContent}>
           <div className={styles.heroLogo}>
@@ -333,7 +333,7 @@ export default function DetailPage() {
       <section 
         ref={(el: HTMLDivElement | null) => { sectionsRef.current[1] = el }}
         data-section="1"
-        className={`${styles.section} ${isVisible[1] ? styles.fadeIn : ''}`}
+        className={`${styles.section} ${isVisible[1] ? styles.slideInLeft : ''}`}
       >
         <div className={styles.sectionContent}>
           <div className={styles.sectionEmoji}>
@@ -347,15 +347,15 @@ export default function DetailPage() {
           </p>
           
           <div className={styles.comparisonList}>
-            <div className={styles.comparisonItem}>
+            <div className={`${styles.comparisonItem} ${isVisible[1] ? styles.staggerItem : ''}`}>
               <div className={styles.comparisonIcon}>🏢</div>
               <p>상가를 임대하고</p>
             </div>
-            <div className={styles.comparisonItem}>
+            <div className={`${styles.comparisonItem} ${isVisible[1] ? styles.staggerItem : ''}`}>
               <div className={styles.comparisonIcon}>🏢</div>
               <p>사무실을 임대하고</p>
             </div>
-            <div className={styles.comparisonItem}>
+            <div className={`${styles.comparisonItem} ${isVisible[1] ? styles.staggerItem : ''}`}>
               <div className={styles.comparisonIcon}>🏢</div>
               <p>창고 공간을 임대합니다</p>
             </div>
@@ -383,7 +383,7 @@ export default function DetailPage() {
       <section 
         ref={(el: HTMLDivElement | null) => { sectionsRef.current[2] = el }}
         data-section="2"
-        className={`${styles.section} ${styles.sectionAlt} ${isVisible[2] ? styles.fadeIn : ''}`}
+        className={`${styles.section} ${styles.sectionAlt} ${isVisible[2] ? styles.slideInRight : ''}`}
       >
         <div className={styles.sectionContent}>
           <div className={styles.sectionEmoji}>
@@ -427,7 +427,7 @@ export default function DetailPage() {
       <section 
         ref={(el: HTMLDivElement | null) => { sectionsRef.current[3] = el }}
         data-section="3"
-        className={`${styles.section} ${isVisible[3] ? styles.fadeIn : ''}`}
+        className={`${styles.section} ${isVisible[3] ? styles.scaleIn : ''}`}
       >
         <div className={styles.sectionContent}>
           <h2 className={styles.sectionTitle}>
@@ -480,7 +480,7 @@ export default function DetailPage() {
       <section 
         ref={(el: HTMLDivElement | null) => { sectionsRef.current[4] = el }}
         data-section="4"
-        className={`${styles.section} ${styles.sectionAlt} ${isVisible[4] ? styles.fadeIn : ''}`}
+        className={`${styles.section} ${styles.sectionAlt} ${isVisible[4] ? styles.slideUpFade : ''}`}
       >
         <div className={styles.sectionContent}>
           <div className={styles.sectionEmoji}>
@@ -544,42 +544,42 @@ export default function DetailPage() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr className={isVisible[5] ? styles.staggerItem : ''}>
                   <td>100평</td>
                   <td>약 67kW</td>
                   <td>약 <Suspense fallback="268만 원"><AnimatedNumber value={268} suffix="만 원" /></Suspense></td>
                   <td>약 <Suspense fallback="1,340만 원"><AnimatedNumber value={1340} suffix="만 원" /></Suspense></td>
                   <td>약 <Suspense fallback="5,360만 원"><AnimatedNumber value={5360} suffix="만 원" /></Suspense></td>
                 </tr>
-                <tr>
+                <tr className={isVisible[5] ? styles.staggerItem : ''}>
                   <td>150평</td>
                   <td>약 100kW</td>
                   <td>약 <Suspense fallback="400만 원"><AnimatedNumber value={400} suffix="만 원" /></Suspense></td>
                   <td>약 <Suspense fallback="2,000만 원"><AnimatedNumber value={2000} suffix="만 원" /></Suspense></td>
                   <td>약 <Suspense fallback="8,000만 원"><AnimatedNumber value={8000} suffix="만 원" /></Suspense></td>
                 </tr>
-                <tr>
+                <tr className={isVisible[5] ? styles.staggerItem : ''}>
                   <td>200평</td>
                   <td>약 133kW</td>
                   <td>약 <Suspense fallback="532만 원"><AnimatedNumber value={532} suffix="만 원" /></Suspense></td>
                   <td>약 <Suspense fallback="2,660만 원"><AnimatedNumber value={2660} suffix="만 원" /></Suspense></td>
                   <td>약 <Suspense fallback="1억 640만 원"><AnimatedNumber value={16400} suffix="만 원" /></Suspense></td>
                 </tr>
-                <tr>
+                <tr className={isVisible[5] ? styles.staggerItem : ''}>
                   <td>300평</td>
                   <td>약 200kW</td>
                   <td>약 <Suspense fallback="800만 원"><AnimatedNumber value={800} suffix="만 원" /></Suspense></td>
                   <td>약 <Suspense fallback="4,000만 원"><AnimatedNumber value={4000} suffix="만 원" /></Suspense></td>
                   <td>약 <Suspense fallback="1억 6,000만 원"><AnimatedNumber value={16000} suffix="만 원" /></Suspense></td>
                 </tr>
-                <tr>
+                <tr className={isVisible[5] ? styles.staggerItem : ''}>
                   <td>500평</td>
                   <td>약 333kW</td>
                   <td>약 <Suspense fallback="1,332만 원"><AnimatedNumber value={1332} suffix="만 원" /></Suspense></td>
                   <td>약 <Suspense fallback="6,660만 원"><AnimatedNumber value={6660} suffix="만 원" /></Suspense></td>
                   <td>약 <Suspense fallback="2억 6,640만 원"><AnimatedNumber value={26640} suffix="만 원" /></Suspense></td>
                 </tr>
-                <tr className={styles.tableHighlight}>
+                <tr className={`${styles.tableHighlight} ${isVisible[5] ? styles.staggerItem : ''}`}>
                   <td>1,000평</td>
                   <td>약 667kW</td>
                   <td>약 <Suspense fallback="2,668만 원"><AnimatedNumber value={2668} suffix="만 원" /></Suspense></td>
@@ -607,7 +607,7 @@ export default function DetailPage() {
       <section 
         ref={(el: HTMLDivElement | null) => { sectionsRef.current[6] = el }}
         data-section="6"
-        className={`${styles.section} ${styles.sectionAlt} ${isVisible[6] ? styles.fadeIn : ''}`}
+        className={`${styles.section} ${styles.sectionAlt} ${isVisible[6] ? styles.rotateFade : ''}`}
       >
         <div className={styles.sectionContent}>
           <div className={styles.sectionEmoji}>
@@ -652,7 +652,7 @@ export default function DetailPage() {
       <section 
         ref={(el: HTMLDivElement | null) => { sectionsRef.current[7] = el }}
         data-section="7"
-        className={`${styles.section} ${isVisible[7] ? styles.fadeIn : ''}`}
+        className={`${styles.section} ${isVisible[7] ? styles.blurFade : ''}`}
       >
         <div className={styles.sectionContent}>
           <h2 className={styles.sectionTitle}>
@@ -713,7 +713,7 @@ export default function DetailPage() {
       <section 
         ref={(el: HTMLDivElement | null) => { sectionsRef.current[8] = el }}
         data-section="8"
-        className={`${styles.section} ${styles.sectionAlt} ${isVisible[8] ? styles.fadeIn : ''}`}
+        className={`${styles.section} ${styles.sectionAlt} ${isVisible[8] ? styles.slideFromBottom : ''}`}
       >
         <div className={styles.sectionContent}>
           <h2 className={styles.sectionTitle}>
@@ -769,7 +769,7 @@ export default function DetailPage() {
       <section 
         ref={(el: HTMLDivElement | null) => { sectionsRef.current[9] = el }}
         data-section="9"
-        className={`${styles.section} ${isVisible[9] ? styles.fadeIn : ''}`}
+        className={`${styles.section} ${isVisible[9] ? styles.scaleRotate : ''}`}
       >
         <div className={styles.sectionContent}>
           <div className={styles.sectionEmoji}>
@@ -811,7 +811,7 @@ export default function DetailPage() {
       <section 
         ref={(el: HTMLDivElement | null) => { sectionsRef.current[10] = el }}
         data-section="10"
-        className={`${styles.section} ${isVisible[10] ? styles.fadeIn : ''}`}
+        className={`${styles.section} ${isVisible[10] ? styles.slideInLeft : ''}`}
       >
         <div className={styles.sectionContent}>
           <div className={styles.sectionEmoji}>
@@ -826,7 +826,7 @@ export default function DetailPage() {
           </p>
 
           <div className={styles.caseGrid}>
-            <div className={styles.caseCard}>
+            <div className={`${styles.caseCard} ${isVisible[10] ? styles.staggerItem : ''}`}>
               <div className={styles.caseImageWrapper}>
                 <Image 
                   src="/공장시공사례.png" 
@@ -845,7 +845,7 @@ export default function DetailPage() {
               </div>
             </div>
 
-            <div className={styles.caseCard}>
+            <div className={`${styles.caseCard} ${isVisible[10] ? styles.staggerItem : ''}`}>
               <div className={styles.caseImageWrapper}>
                 <Image 
                   src="/축사사례.png" 
@@ -864,7 +864,7 @@ export default function DetailPage() {
               </div>
             </div>
 
-            <div className={styles.caseCard}>
+            <div className={`${styles.caseCard} ${isVisible[10] ? styles.staggerItem : ''}`}>
               <div className={styles.caseImageWrapper}>
                 <Image 
                   src="/주택사례.png" 
@@ -946,7 +946,7 @@ export default function DetailPage() {
       <section 
         ref={(el: HTMLDivElement | null) => { sectionsRef.current[11] = el }}
         data-section="11"
-        className={`${styles.section} ${styles.sectionAlt} ${isVisible[11] ? styles.fadeIn : ''}`}
+        className={`${styles.section} ${styles.sectionAlt} ${isVisible[11] ? styles.slideInRight : ''}`}
       >
         <div className={styles.sectionContent}>
           <div className={styles.sectionEmoji}>
@@ -1147,7 +1147,7 @@ export default function DetailPage() {
       <section 
         ref={(el: HTMLDivElement | null) => { sectionsRef.current[13] = el }}
         data-section="13"
-        className={`${styles.section} ${isVisible[13] ? styles.fadeIn : ''}`}
+        className={`${styles.section} ${isVisible[13] ? styles.parallaxFade : ''}`}
       >
         <div className={styles.sectionContent}>
           <div className={styles.sectionEmoji}>
@@ -1251,7 +1251,7 @@ export default function DetailPage() {
         id="final-cta"
         ref={(el: HTMLDivElement | null) => { sectionsRef.current[14] = el }}
         data-section="14"
-        className={`${styles.finalSection} ${isVisible[14] ? styles.fadeIn : ''}`}
+        className={`${styles.finalSection} ${isVisible[14] ? styles.bounceScale : ''}`}
       >
         <div className={styles.finalContent}>
           <h2 className={styles.finalTitle}>

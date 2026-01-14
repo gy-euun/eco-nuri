@@ -2477,11 +2477,68 @@
   }
 }
 
-/* 애니메이션 */
+/* 애니메이션 - 트렌디한 모션 컬렉션 */
 .fadeIn {
-  animation: fadeIn 0.6s ease-out forwards;
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* 섹션별 다양한 애니메이션 */
+.slideInLeft {
+  animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.slideInRight {
+  animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.scaleIn {
+  animation: scaleIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.slideUpFade {
+  animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.rotateFade {
+  animation: rotateFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.blurFade {
+  animation: blurFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.slideFromBottom {
+  animation: slideFromBottom 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.scaleRotate {
+  animation: scaleRotate 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.parallaxFade {
+  animation: parallaxFade 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.bounceScale {
+  animation: bounceScale 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* 초기 상태 - 애니메이션 전 */
+.fadeIn,
+.slideInLeft,
+.slideInRight,
+.scaleIn,
+.slideUpFade,
+.rotateFade,
+.blurFade,
+.slideFromBottom,
+.scaleRotate,
+.parallaxFade,
+.bounceScale {
+  opacity: 0;
+}
+
+/* 키프레임 애니메이션 */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -2492,6 +2549,134 @@
     transform: translateY(0);
   }
 }
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateFade {
+  from {
+    opacity: 0;
+    transform: rotate(-5deg) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes blurFade {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleRotate {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotate(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes parallaxFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px) translateZ(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+  }
+}
+
+@keyframes bounceScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Stagger 애니메이션 - 순차적으로 나타남 */
+.staggerItem {
+  opacity: 0;
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.staggerItem:nth-child(1) { animation-delay: 0.1s; }
+.staggerItem:nth-child(2) { animation-delay: 0.2s; }
+.staggerItem:nth-child(3) { animation-delay: 0.3s; }
+.staggerItem:nth-child(4) { animation-delay: 0.4s; }
+.staggerItem:nth-child(5) { animation-delay: 0.5s; }
+.staggerItem:nth-child(6) { animation-delay: 0.6s; }
 
 /* 반응형 디자인 */
 @media (max-width: 768px) {
